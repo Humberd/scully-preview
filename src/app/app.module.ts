@@ -3,16 +3,27 @@ import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
 import { ScullyLibModule } from '@scullyio/ng-lib';
+import { RouterModule } from '@angular/router';
+import { ContentComponent } from './content/content.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    ContentComponent,
   ],
   imports: [
     BrowserModule,
-    ScullyLibModule
+    ScullyLibModule,
+    RouterModule.forRoot([
+        {
+          path: '',
+          component: ContentComponent,
+        },
+      ],
+    ),
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {
+}
